@@ -1,0 +1,72 @@
+{
+  "name": "@petfinder/petfinder-js",
+  "version": "1.0.0",
+  "description": "Petfinder API client",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/petfinder-com/petfinder-js-sdk.git"
+  },
+  "author": "Petfinder.com (https://www.petfinder.com/)",
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "pets",
+    "adoption",
+    "petfinder"
+  ],
+  "main": "dist/main.js",
+  "browser": "dist/petfinder.js",
+  "dependencies": {
+    "axios": "^0.18.0"
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.11",
+    "axios-mock-adapter": "^1.16.0",
+    "jest": "^24.4.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.6.0",
+    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-typescript": "^1.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
+    "ts-jest": "^24.0.0",
+    "tslint": "^5.13.1",
+    "typescript": "^3.3.3333"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc && rollup -c",
+    "watch": "tsc -w | rollup -w -c",
+    "prepublish": "npm run build",
+    "pretest": "npm run lint",
+    "test": "jest",
+    "test:watch": "npm run test -- --watch",
+    "coverage": "jest --collect-coverage",
+    "lint": "tslint -c tslint.json '{src,tests}/**/*.ts'",
+    "fix": "tslint -c tslint.json --fix '{src,tests}/**/*.ts'"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*"
+    ],
+    "coverageDirectory": "build/coverage",
+    "coverageReporters": [
+      "text",
+      "clover",
+      "html"
+    ],
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "transform": {
+      "\\.ts$": "ts-jest"
+    },
+    "testRegex": ".*\\.test\\.(ts|js)$",
+    "testEnvironment": "node"
+  }
+}
