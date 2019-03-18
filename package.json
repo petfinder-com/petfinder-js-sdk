@@ -1,6 +1,6 @@
 {
   "name": "@petfinder/petfinder-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Petfinder API client",
   "repository": {
     "type": "git",
@@ -35,7 +35,7 @@
     "prebuild": "rimraf dist",
     "build": "tsc && rollup -c",
     "watch": "tsc -w | rollup -w -c",
-    "prepublish": "npm run build",
+    "prepare": "npm run build",
     "pretest": "npm run lint",
     "test": "jest",
     "test:watch": "npm run test -- --watch",
