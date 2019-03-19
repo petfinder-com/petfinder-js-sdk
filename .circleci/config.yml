@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:10
+    working_directory: ~/petfinder-js
+    steps:
+      - checkout
+      - run: sudo npm install -g npm@latest
+      - restore_cache:
+          key: npm-cache-{{ checksum "package.json" }}
+      - run: npm audit
+      - run: npm install
+      - save_cache:
+          key: npm-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+      - run: npm run lint
+      - run: npm run coverage
+      - store_artifacts:
+          path: build/coverage
+          prefix: coverage
+      - store_test_results:
+          path: junit.xml
