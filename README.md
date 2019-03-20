@@ -1,5 +1,8 @@
 # Petfinder JS SDK
 
+[![CircleCI](https://circleci.com/gh/petfinder-com/petfinder-js-sdk.svg?style=shield)](https://circleci.com/gh/petfinder-com/petfinder-js-sdk)
+[![npm version](https://img.shields.io/npm/v/@petfinder/petfinder-js.svg)](https://www.npmjs.com/package/@petfinder/petfinder-js)
+
 A JS wrapper for the Petfinder API, written in JavaScript/TypeScript.
 
 ## Install

@@ -8,7 +8,9 @@ jobs:
       - checkout
       - run: sudo npm install -g npm@latest
       - restore_cache:
-          key: npm-cache-{{ checksum "package.json" }}
+          keys:
+            - npm-cache-{{ checksum "package.json" }}
+            - npm-cache-
       - run: npm audit
       - run: npm install
       - save_cache:
