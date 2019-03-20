@@ -2,6 +2,7 @@
 
 [![CircleCI](https://circleci.com/gh/petfinder-com/petfinder-js-sdk.svg?style=shield)](https://circleci.com/gh/petfinder-com/petfinder-js-sdk)
 [![npm version](https://img.shields.io/npm/v/@petfinder/petfinder-js.svg)](https://www.npmjs.com/package/@petfinder/petfinder-js)
+[![Coverage Status](https://coveralls.io/repos/github/petfinder-com/petfinder-js-sdk/badge.svg?branch=feature%2Fcoveralls)](https://coveralls.io/github/petfinder-com/petfinder-js-sdk?branch=feature%2Fcoveralls)
 
 A JS wrapper for the Petfinder API, written in JavaScript/TypeScript.
 
