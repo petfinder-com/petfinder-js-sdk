@@ -60,3 +60,16 @@ it("Should be able to get sub clients", () => {
     expect(client.animalData).toBeInstanceOf(AnimalData);
     expect(client.organization).toBeInstanceOf(Organization);
 });
+
+it("Should include an identifiable user agent", async () => {
+    const mock = new MockAdapter(axios);
+    mock.onGet("/").replyOnce(200);
+
+    const client = new Client({apiKey: "foo", secret: "bar"});
+    const response = await client.http.get("/");
+
+    expect(response.status).toEqual(200);
+    expect(mock.history.get.length).toEqual(1);
+    expect(mock.history.get[0].headers["User-Agent"])
+        .toEqual("petfinder-js-sdk/v1.0 (https://github.com/petfinder-com/petfinder-js-sdk)");
+});
