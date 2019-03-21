@@ -1,6 +1,6 @@
 {
   "name": "@petfinder/petfinder-js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Petfinder API client",
   "repository": {
     "type": "git",
