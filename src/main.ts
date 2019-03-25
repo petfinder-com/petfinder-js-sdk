@@ -19,7 +19,7 @@ export class Client {
         this.config = config;
         this.http = axios.create({
             baseURL: config.baseUrl || "https://api.petfinder.com/v2",
-            headers: {"User-Agent": "petfinder-js-sdk/v1.0 (https://github.com/petfinder-com/petfinder-js-sdk)"},
+            headers: {"x-api-sdk": "petfinder-js-sdk/v1.0 (https://github.com/petfinder-com/petfinder-js-sdk)"},
         });
 
         this.http.interceptors.response.use((response: AxiosResponse) => {
