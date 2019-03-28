@@ -6,6 +6,12 @@
 
 A JS wrapper for the Petfinder API, written in JavaScript/TypeScript.
 
+## Features
+
+* TypeScript definition
+* Promises (via [Axios](https://github.com/axios/axios))
+* Well tested
+
 ## Install
 
 Using npm:
@@ -22,7 +28,7 @@ In browser:
 ## Usage (Browser)
 
 ```js
-var pf = new petfinder.Client({apiKey: 'my-api-key', secret: 'my-api-secret'});
+var pf = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
 
 pf.animal.search()
     .then(function (response) {
@@ -37,7 +43,7 @@ pf.animal.search()
 
 ```js
 var petfinder = require("@petfinder/petfinder-js");
-var client = new petfinder.Client({apiKey: 'my-api-key', secret: 'my-api-secret'});
+var client = new petfinder.Client({apiKey: "my-api-key", secret: "my-api-secret"});
 
 client.animal.search()
     .then(function (response) {
@@ -53,7 +59,7 @@ client.animal.search()
 ```js
 import { Client } from "@petfinder/petfinder-js";
 
-const client = new Client({apiKey: 'my-api-key', secret: 'my-api-secret'});
+const client = new Client({apiKey: "my-api-key", secret: "my-api-secret"});
 
 client.animal.search()
     .then(function (response) {
@@ -63,3 +69,7 @@ client.animal.search()
         // Handle the error
     });
 ```
+
+## Documentation
+
+See [docs directory](docs/) for more detailed documentation.
