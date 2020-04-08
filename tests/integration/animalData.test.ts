@@ -1,4 +1,3 @@
-import { ProblemDetailsError } from "../../src/error";
 import { Client } from "../../src/main";
 
 const clientConfig = {
@@ -12,7 +11,7 @@ const client = new Client(clientConfig);
 
 testCase("Can get animal types", async () => {
     const response = await client.animalData.types();
-    const types = response.data.types.map((type: { name: string; }) => {
+    const types = response.data.types.map((type: { name: string }) => {
         return type.name;
     });
 
@@ -33,7 +32,7 @@ testCase("Can get animal type", async () => {
 
 testCase("Can get animal type breeds", async () => {
     const response = await client.animalData.breeds("Dog");
-    const breeds = response.data.breeds.map((breed: { name: string; }) => {
+    const breeds = response.data.breeds.map((breed: { name: string }) => {
         return breed.name;
     });
 

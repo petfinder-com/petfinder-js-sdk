@@ -1,10 +1,11 @@
 import axios, { AxiosError, AxiosInstance, AxiosResponse } from "axios";
+
 import { Animal } from "./api/animal";
 import { AnimalData } from "./api/animalData";
 import { Organization } from "./api/organization";
 import { ProblemDetailsError } from "./error";
 
-interface IClientConfig {
+interface ClientConfig {
     apiKey: string;
     secret: string;
     token?: string;
@@ -13,9 +14,9 @@ interface IClientConfig {
 
 export class Client {
     public http: AxiosInstance;
-    private config: IClientConfig;
+    private config: ClientConfig;
 
-    constructor(config: IClientConfig) {
+    constructor(config: ClientConfig) {
         this.config = config;
         this.http = axios.create({
             baseURL: config.baseUrl || "https://api.petfinder.com/v2",
@@ -51,8 +52,11 @@ export class Client {
 
         if (!accessToken) {
             response = await this.http.post("/oauth2/token", {
+                // eslint-disable-next-line @typescript-eslint/camelcase
                 client_id: this.config.apiKey,
+                // eslint-disable-next-line @typescript-eslint/camelcase
                 client_secret: this.config.secret,
+                // eslint-disable-next-line @typescript-eslint/camelcase
                 grant_type: "client_credentials",
             });
             accessToken = response.data.access_token;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+
 import { AnimalData } from "../../src/api/animalData";
 import { Client } from "../../src/main";
 

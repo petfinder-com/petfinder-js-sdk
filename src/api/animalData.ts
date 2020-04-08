@@ -1,4 +1,5 @@
 import { AxiosResponse } from "axios";
+
 import { ApiClient } from "./client";
 
 export class AnimalData extends ApiClient {

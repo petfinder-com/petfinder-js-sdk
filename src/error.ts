@@ -6,6 +6,7 @@ export class ProblemDetailsError extends Error {
     public details: string;
     public invalidParams?: object;
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     constructor(public request: any, public response: AxiosResponse) {
         super(response.data.title);
         this.type = response.data.type;

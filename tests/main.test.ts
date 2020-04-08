@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/camelcase */
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+
 import { Animal } from "../src/api/animal";
 import { AnimalData } from "../src/api/animalData";
 import { Organization } from "../src/api/organization";
