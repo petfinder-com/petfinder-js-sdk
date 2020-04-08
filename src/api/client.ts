@@ -1,4 +1,5 @@
 import { AxiosInstance } from "axios";
+
 import { Client } from "../main";
 
 export abstract class ApiClient {

@@ -24,7 +24,7 @@ testCase("Can search animals with parameters", async () => {
     expect(response.status).toEqual(200);
     expect(response.data.animals.length).toBeGreaterThan(1);
 
-    expect(response.data.animals.every((animal: { type: string; }) => {
+    expect(response.data.animals.every((animal: { type: string }) => {
         return "Dog" === animal.type;
     })).toBe(true);
 });

@@ -24,6 +24,7 @@ testCase("Can search organizations with parameters", async () => {
     expect(response.status).toEqual(200);
     expect(response.data.organizations.length).toBeGreaterThan(1);
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     expect(response.data.organizations.every((organization: any) => {
         return "US" === organization.address.country;
     })).toBe(true);

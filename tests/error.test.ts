@@ -1,5 +1,6 @@
 import axios from "axios";
 import MockAdapter from "axios-mock-adapter";
+
 import { ProblemDetailsError } from "../src/error";
 import { Client } from "../src/main";
 
