@@ -19,7 +19,7 @@ client.authenticate();
 
 This returns the OAuth response, so you could cache the access token and
 improve the performance of your application by not having to get an access
-token for every request. Just be aware that access tokens expire.
+token for every request. Be aware that access tokens expire.
 
 ```js
 client.authenticate()
@@ -29,9 +29,13 @@ client.authenticate()
   });
 ```
 
-If you have a token you would like to use instead of automatically fetching
-one, you have a couple options. First you could pass it when creating the
-client.
+If you have an access token, you can add it via the authenticate method, as follows:
+
+```js
+client.authenticate("my-access-token");
+```
+
+You can also add the access token when creating the client as follows:
 
 ```js
 import { Client } from "@petfinder/petfinder-js";
@@ -41,10 +45,4 @@ const client = new Client({
   secret: "my-api-secret",
   token: "my-access-token",
 });
-```
-
-Otherwise you can call the `authenticate` method passing the access token.
-
-```js
-client.authenticate("my-access-token");
 ```
