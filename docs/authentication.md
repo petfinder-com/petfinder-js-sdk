@@ -29,9 +29,12 @@ client.authenticate()
   });
 ```
 
-If you have a token you would like to use instead of automatically fetching
-one, you have a couple options. First you could pass it when creating the
-client.
+If you have an access-token, you can simply add it to the authenticate, as follows:
+```js
+client.authenticate("my-access-token");
+```
+
+Alternatively, a way to quickly authenticate for API calls can be done as follows:
 
 ```js
 import { Client } from "@petfinder/petfinder-js";
@@ -39,12 +42,8 @@ import { Client } from "@petfinder/petfinder-js";
 const client = new Client({
   apiKey: "my-api-key",
   secret: "my-api-secret",
-  token: "my-access-token",
+  [token: "my-access-token",]*
 });
 ```
+_*Note: token is optional, but if you want to keep the same, pass it in_
 
-Otherwise you can call the `authenticate` method passing the access token.
-
-```js
-client.authenticate("my-access-token");
-```
